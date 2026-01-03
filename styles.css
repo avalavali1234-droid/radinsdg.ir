@@ -1,3 +1,4 @@
+
 body{
     font-size: 16px;
     background-image: url('Code.jpg');
@@ -81,8 +82,10 @@ a{
 .name{
     font-size: 5em;  
     color: white;
+    display: flex;
     text-shadow: 4px 4px 4px orange;
     text-align: center;
+    justify-content: center;
 }
 .bar form{
     display: flex;
@@ -167,4 +170,31 @@ a{
 }
 .card{
     font-size: 2em;
+}
+.signup{
+    background-color: orange;
+    border: 3px solid red;
+    transition: background-color 0.4s ease-in-out;
+    transition: border 0.4s ease-in-out;
+    height: 40px;
+    margin-right: 10px;
+}
+.signup:hover{
+    background-color: red;
+    border: 3px solid orange;
+}
+.download{
+    background-color: orange;
+    border: 3px solid red;
+    transition: background-color 0.4s ease-in-out;
+    transition: border 0.4s ease-in-out;
+    height: 40px;
+    margin-right: 10px;
+    padding: 20px;
+    border-radius: 50px;
+    font-size: 1.7em;
+}
+.download:hover{
+    background-color: red;
+    border: 3px solid orange;
 }
