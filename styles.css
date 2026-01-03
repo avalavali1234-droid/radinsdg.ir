@@ -1,0 +1,170 @@
+body{
+    font-size: 16px;
+    background-image: url('Code.jpg');
+    height: 30px;
+    color: white;
+}
+
+.bar{
+    display: flex;
+    height: 50px;
+}
+
+.bar > div{
+    font-size: 1.4em;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    align-content: center;
+    height: 40px;
+    
+}
+
+.search{
+    background-color: yellowgreen;
+    border: 3px solid green;
+    transition: background-color 0.4s ease-in-out;
+    transition: border 0.4s ease-in-out;
+    order: 0;
+    margin-right: auto;
+
+}
+.search:hover{
+    background-color: green;
+    border: 3px solid yellowgreen;
+}
+.login{
+    background-color: gray;
+    border: 3px solid black;
+    transition: background-color 0.4s ease-in-out;
+    transition: border 0.4s ease-in-out;
+}
+.login:hover{
+    background-color: black;
+    border: 3px solid gray;
+}
+.home{
+    background-color: skyblue;
+    margin-left: auto;
+    order: 0;
+    border: 3px solid blue;
+    transition: background-color 0.4s ease-in-out;
+    transition: border 0.4s ease-in-out;
+    
+}
+.home:hover{
+    background-color: blue;
+    border: 3px solid skyblue;
+}
+#search1 {
+    display: flex;
+    order: 0;
+    margin-right: auto;
+    width:60%;
+    height: 60px;
+    border: 3px solid blue;
+    outline: none;
+    font-size: 20px;
+    text-align: center;
+    transition: width 0.4s linear;
+    transition: font-size 0.8s ease-in-out;
+}
+#search1:focus {
+    width:90%;
+    border: 3px solid purple;
+    font-size: 1.5em;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+.name{
+    font-size: 5em;  
+    color: white;
+    text-shadow: 4px 4px 4px orange;
+    text-align: center;
+}
+.bar form{
+    display: flex;
+    align-items: center;
+}
+.search{
+    background-color: yellowgreen;
+    border: 3px solid green;
+    transition: background-color 0.4s ease-in-out;
+    transition: border 0.4s ease-in-out;
+    height: 40px;
+    order: -1;
+    margin-right: 10px;   /* ❗️auto رو حذف کردیم */
+}
+.bar{
+    display: flex;
+    height: 70px;
+    align-items: center;   /* ⭐ مهم‌ترین خط */
+}
+#search1 {
+    order: -1;
+    margin-right: 10px;
+    width: 200px;
+    height: 40px;          /* ❗️ از 60 به 40 */
+    border: 3px solid blue;
+    outline: none;
+    font-size: 18px;
+    text-align: center;
+    transition: width 0.4s linear, font-size 0.8s ease-in-out;
+}
+.bar > div{
+    font-size: 1.4em;
+    color: white;
+    padding: 8px 12px;     /* کمتر و متعادل */
+    text-align: center;
+    height: 40px;
+    display: flex;
+    align-items: center;   /* ⭐ */
+    justify-content: center;
+}
+#search1:focus {
+    width: 270px;
+    font-size: 1.4em;
+    border: 3px solid purple;
+}
+.aboutus b{
+    font-size: 3em;
+}
+.aboutus{
+    font-size: 1.4em;
+}
+.call{
+    background-color: pink;
+    border: 3px solid purple;
+    transition: background-color 0.4s ease-in-out;
+    transition: border 0.4s ease-in-out;
+    height: 40px;
+    position: fixed;
+    bottom: 13px;
+    right: 13px;
+    border-radius: 50px;
+}
+.call:hover{
+    background-color: purple;
+    border: 3px solid pink;
+}
+.course{
+    background-color: silver;
+    font-size: 1.4em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    border: 3px solid gray;
+    transition: background-color 0.4s ease-in-out;
+    transition: border 0.4s ease-in-out;
+    height: 50px;
+}
+.course:hover{
+    background-color: gray;
+    border: 3px solid silver;
+}
+.card{
+    font-size: 2em;
+}

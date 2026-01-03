@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Login | Radinsdg</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="name">Login</div>
+
+<br><br>
+
+<div style="display:flex; justify-content:center;">
+    <div style="background:rgba(0,0,0,0.6); padding:30px; border-radius:15px;">
+
+        <input type="text" id="username" placeholder="Username"
+        style="display:block; margin-bottom:15px; width:250px; height:40px; font-size:18px;">
+
+        <input type="password" id="password" placeholder="Password"
+        style="display:block; margin-bottom:20px; width:250px; height:40px; font-size:18px;">
+
+        <div class="login item" onclick="loginUser()" style="cursor:pointer;">
+            Login
+        </div>
+
+        <p id="loginMsg" style="color:orange; margin-top:15px;"></p>
+
+    </div>
+</div>
+
+<script>
+function loginUser() {
+    let user = document.getElementById("username").value;
+    let pass = document.getElementById("password").value;
+
+    // اطلاعات جدید
+    if (user === "Radin Sarlak" && pass === "926215") {
+        localStorage.setItem("loggedIn", "true");
+        localStorage.setItem("username", user);
+        window.location.href = "index.html";
+    } else {
+        document.getElementById("loginMsg").innerText = "❌ Wrong username or password";
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <title>Course</title>
+</head>
+<body>
+    <h1 class="name">
+        Courses
+    </h1>
+    <br>
+
+<div class="bar">
+
+    <form action="" onsubmit="return false;">
+        <br>
+        <input type="text" id="search1" placeholder="   search ..." onkeyup="searchItems()">
+    </form>
+
+<div class="home item"><a href="index.html">home</a></div><br>
+    &nbsp;&nbsp;
+<div class="login item"><a href="login.html">login</a></div><br>
+<div class="search item">search</div>
+<div class="call item" id="ctBtn" onclick="toggleCT()">
+    CT
+    <div id="ctMenu" style="display:none; position:absolute; margin-bottom:105px;margin-right: 150px;">
+        <div onclick="goShad()" style="display: inline;background-color: orange;padding:5px;border: 2px solid yellow;border-radius: 10px;">Shad</div>
+        <hr>
+        <div onclick="goBale()" style="display: inline;background-color: green;padding:5px;border: 2px solid white;border-radius: 10px;">Bale</div>
+    </div>
+</div>
+
+</div><br>
+    <div class="course item"><a href="course.html">courses</a></div>
+    <br>
+    <div class="pcard item">
+        <a href="python.html">
+            <img src="Python.jpg" width="400px" height="250px">
+        </a>
+        
+        <br>
+        <strong>Introduction to Python</strong><br>
+        <hr>
+        teacher : <br>
+        <strong>Radin Sarlak</strong>
+        <hr>
+        type : <br>
+        <strong>video , mp4</strong>
+        <hr>
+        lang : <br>
+        <strong>persian</strong>
+    </div>
+    
+    
+<script>
+function searchItems() {
+    let input = document.getElementById("search1").value.toLowerCase();
+    let items = document.querySelectorAll(".item");
+
+    items.forEach(item => {
+        if (item.textContent.toLowerCase().includes(input)) {
+            item.style.display = "block";
+        } else {
+            item.style.display = "none";
+        }
+    });
+}
+</script>
+   
+    
+<script>
+function toggleCT() {
+    let menu = document.getElementById("ctMenu");
+    menu.style.display = (menu.style.display === "block") ? "none" : "block";
+}
+
+function goShad() {
+    window.open("https://shad.ir/radinsarlak", "_blank");
+}
+
+function goBale() {
+    window.open("https://web.bale.ai/@artinhdg", "_blank");
+}
+</script>
+<script>
+if (localStorage.getItem("loggedIn") === "true") {
+    let loginBtn = document.querySelector(".login a");
+    loginBtn.innerText = "Logout";
+    loginBtn.onclick = function () {
+        localStorage.clear();
+        location.reload();
+    };
+}
+</script>
+
+</body>
+</html>
