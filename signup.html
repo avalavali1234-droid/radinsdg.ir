@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Signup | Radinsdg</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="name">Signup</div>
+
+<br><br>
+
+<div style="display:flex; justify-content:center;">
+    <div style="background:rgba(0,0,0,0.6); padding:30px; border-radius:15px;">
+
+        <input type="text" id="su_name" placeholder="Full Name"
+        style="display:block; margin-bottom:15px; width:260px; height:40px; font-size:18px;">
+
+        <input type="text" id="su_user" placeholder="Username"
+        style="display:block; margin-bottom:15px; width:260px; height:40px; font-size:18px;">
+
+        <input type="password" id="su_pass" placeholder="Password"
+        style="display:block; margin-bottom:20px; width:260px; height:40px; font-size:18px;">
+
+        <div class="signup item" onclick="signupUser()" style="cursor:pointer;">
+            Signup
+        </div>
+
+        <p id="signupMsg" style="color:orange; margin-top:15px;"></p>
+
+    </div>
+</div>
+
+<script>
+function signupUser() {
+    let name = document.getElementById("su_name").value;
+    let user = document.getElementById("su_user").value;
+    let pass = document.getElementById("su_pass").value;
+
+    if (name === "" || user === "" || pass === "") {
+        document.getElementById("signupMsg").innerText = "❌ Fill all fields";
+        return;
+    }
+
+    // ذخیره اطلاعات (ساده)
+    localStorage.setItem("signedUp", "true");
+    localStorage.setItem("su_name", name);
+    localStorage.setItem("su_user", user);
+
+    window.location.href = "index.html";
+}
+</script>
+
+</body>
+</html>
