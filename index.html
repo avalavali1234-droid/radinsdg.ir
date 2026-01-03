@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,6 +24,8 @@
 <div class="home item"><a href="index.html">home</a></div><br>
     &nbsp;&nbsp;
 <div class="login item"><a href="login.html">login</a></div><br>
+    &nbsp;&nbsp;
+    <div class="signup item"><a href="signup.html">signup</a></div>
 <div class="search item">search</div>
 <div class="call item" id="ctBtn" onclick="toggleCT()">
     CT
@@ -83,6 +86,20 @@ if (localStorage.getItem("loggedIn") === "true") {
     loginBtn.innerText = "Logout";
     loginBtn.onclick = function () {
         localStorage.clear();
+        location.reload();
+    };
+}
+</script>
+<script>
+let signupBtn = document.querySelector(".signup a");
+
+if (localStorage.getItem("signedUp") === "true") {
+    signupBtn.innerText = "Signout";
+    signupBtn.href = "#";
+    signupBtn.onclick = function () {
+        localStorage.removeItem("signedUp");
+        localStorage.removeItem("su_name");
+        localStorage.removeItem("su_user");
         location.reload();
     };
 }
