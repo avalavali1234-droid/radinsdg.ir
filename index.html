@@ -2,12 +2,58 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <style>
+@keyframes rotatePhone {
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(90deg); }
+  100% { transform: rotate(0deg); }
+}
+</style>
     <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
     <link rel="stylesheet" href="styles.css">
     <title>Radinsdg</title>
+    
 </head>
 <body>
+<!-- Rotate suggestion -->
+<div id="rotateBox" style="
+position:fixed;
+inset:0;
+background:rgba(0,0,0,0.9);
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+z-index:9999;
+color:white;
+font-family:Arial;
+">
 
+  <div style="
+    width:80px;
+    height:140px;
+    border:4px solid white;
+    border-radius:12px;
+    margin-bottom:20px;
+    animation:rotatePhone 2s infinite ease-in-out;
+  "></div>
+
+  <h2>Please rotate your device</h2>
+  <p>For a better experience, use landscape mode.</p>
+
+  <button onclick="dismissRotate()" style="
+    margin-top:20px;
+    padding:10px 18px;
+    background:transparent;
+    border:1px solid white;
+    color:white;
+    cursor:pointer;
+    border-radius:6px;
+  ">
+    Continue anyway
+  </button>
+</div>
 <strong>
     <div class="name">ℜ𝔞𝔡𝔦𝔫𝔰𝔡𝔤</div>
 </strong>
@@ -103,6 +149,29 @@ if (localStorage.getItem("signedUp") === "true") {
         location.reload();
     };
 }
+</script>
+<script>
+let rotateDismissed = false;
+
+function checkOrientation() {
+  if (rotateDismissed) return;
+
+  const box = document.getElementById("rotateBox");
+
+  if (window.innerHeight > window.innerWidth) {
+    box.style.display = "flex";
+  } else {
+    box.style.display = "none";
+  }
+}
+
+function dismissRotate() {
+  rotateDismissed = true;
+  document.getElementById("rotateBox").style.display = "none";
+}
+
+window.addEventListener("load", checkOrientation);
+window.addEventListener("resize", checkOrientation);
 </script>
 </body>
 </html>
