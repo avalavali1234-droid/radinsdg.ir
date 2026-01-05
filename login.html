@@ -73,6 +73,28 @@ function loginUser() {
     }
 }
 </script>
+<script>
+let rotateDismissed = false;
 
+function checkOrientation() {
+  if (rotateDismissed) return;
+
+  const box = document.getElementById("rotateBox");
+
+  if (window.innerHeight > window.innerWidth) {
+    box.style.display = "flex";
+  } else {
+    box.style.display = "none";
+  }
+}
+
+function dismissRotate() {
+  rotateDismissed = true;
+  document.getElementById("rotateBox").style.display = "none";
+}
+
+window.addEventListener("load", checkOrientation);
+window.addEventListener("resize", checkOrientation);
+</script>
 </body>
 </html>
