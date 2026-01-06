@@ -198,3 +198,20 @@ a{
     background-color: red;
     border: 3px solid orange;
 }
+.ai{
+    background-color: yellowgreen;
+    font-size: 1.4em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    border: 3px solid green;
+    transition: background-color 0.4s ease-in-out;
+    transition: border 0.4s ease-in-out;
+    height: 50px;
+}
+.ai:hover{
+    background-color: green;
+    border: 3px solid yellowgreen;
+}
+
